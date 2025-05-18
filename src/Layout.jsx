@@ -79,8 +79,8 @@ function Layout() {
 
                                 {/* Two Side-by-Side Pics */}
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                    <img src={poster1} alt="海報" className="w-64 h-128 object-cover rounded-md mb-2"/>
-                                    <img src={poster2} alt="海報" className="w-64 h-128 object-cover rounded-md mb-2"/>
+                                    <img src={poster1} alt="海報" className="w-64 h-128 object-cover rounded-md mb-2" />
+                                    <img src={poster2} alt="海報" className="w-64 h-128 object-cover rounded-md mb-2" />
                                 </div>
 
                                 {/* Horizontal Line */}
@@ -88,7 +88,8 @@ function Layout() {
 
                                 {/* Bottom Paragraph */}
                                 <div className="text-gray-700">
-                                    聯絡資訊...
+                                    ig:<a href="https://www.instagram.com/ty.ideatree" target="_blank" rel="noopener noreferrer">ty.ideatree</a><br/>
+                                    email:<a href="mailto:ty.ideatree@gmail.com">ty.ideatree@gmail.com</a>
                                 </div>
                             </div>
                         </div>
