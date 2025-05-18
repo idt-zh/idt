@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import poster from './assets/post.jpg';
 function Layout() {
 
     const PAGES = {
@@ -49,12 +50,12 @@ function Layout() {
                             <div className="flex flex-row items-center justify-between border border-gray-400 rounded-lg p-6 w-full max-w-5xl bg-white shadow">
                                 {/* 左邊圖片 */}
                                 <div className="w-44 h-32 border rounded-lg flex items-center justify-center text-gray-500 text-sm">
-                                    阿金還沒給我照片
+                                    <img src={poster} alt="海報" />
                                 </div>
 
                                 {/* 中間文字區 */}
                                 <div className="flex-1 mx-6">
-                                    <h2 className="text-2xl font-bold">【特價】桃園一日遊</h2>
+                                    <h2 className="text-2xl font-bold">【特價】7/1 桃園一日遊</h2>
                                     <div className="text-gray-600 mt-2">
                                         一場從甜點開始的輕旅行<br />
                                         一起走進海洋、走入草地<br />
