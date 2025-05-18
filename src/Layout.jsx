@@ -5,6 +5,7 @@ import poster2 from './assets/post2.jpg';
 import fact from './assets/S__991251.jpg';
 import migan from './assets/S__991250.jpg';
 import farm from './assets/S__991249.jpg';
+import slogan from './assets/slogan.jpg';
 function Layout() {
 
     const PAGES = {
@@ -46,10 +47,10 @@ function Layout() {
                             <div className="max-w-6xl mx-auto p-6 space-y-10">
 
                                 {/* Slogan */}
-                                <div className="bg-gray-100 text-center p-6 rounded-xl shadow text-3xl font-bold">
+                                {/* <div className="bg-gray-100 text-center p-6 rounded-xl shadow text-3xl font-bold">
                                     我們用一天，換一段剛剛好的回憶
-                                </div>
-
+                                </div> */}
+                                <img src={slogan} alt="標語" />
                                 {/* Horizontal Line */}
                                 <hr className="border-t border-gray-300" />
 
