@@ -1,5 +1,10 @@
 import { useState } from 'react';
 import poster from './assets/post.jpg';
+import poster1 from './assets/post1.jpg';
+import poster2 from './assets/post2.jpg';
+import fact from './assets/S__991251.jpg';
+import migan from './assets/S__991250.jpg';
+import farm from './assets/S__991249.jpg';
 function Layout() {
 
     const PAGES = {
@@ -8,6 +13,8 @@ function Layout() {
     };
     const [activePage, setActivePage] = useState(PAGES.HOME);
     const [showModal, setShowModal] = useState(false);
+    const cardImages = [fact, migan, farm];
+    const cardDescriptions = ['金格觀光工廠', '龍岡米干街', '埔心牧場'];
     return (
 
         <div>
@@ -35,12 +42,55 @@ function Layout() {
                     {activePage === PAGES.HOME && (
                         <div>
                             <h1 className="text-2xl font-bold mb-2">🌳歡迎來到 點子樹</h1>
-                            <p>Ideatree......</p>
-                            <div className="text-red-600 font-bold text-xl">
-                                這是一個來自中原大學資訊管理學系學生的企業概論專案，非真實旅遊業者，請勿當真。
+                            <p className="text-red-600 font-bold">這是一個來自中原大學資訊管理學系學生的企業概論專案，非真實旅遊業者，請勿當真。</p>
+                            <div className="max-w-6xl mx-auto p-6 space-y-10">
+
+                                {/* Slogan */}
+                                <div className="bg-gray-100 text-center p-6 rounded-xl shadow text-3xl font-bold">
+                                    我們用一天，換一段剛剛好的回憶
+                                </div>
+
+                                {/* Horizontal Line */}
+                                <hr className="border-t border-gray-300" />
+
+                                {/* Three Cards */}
+                                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                                    {cardImages.map((img, index) => (
+                                        <div key={index} className="border rounded-xl p-4 text-center shadow">
+                                            <img
+                                                src={img}
+                                                alt={`Card ${index + 1}`}
+                                                className="w-full h-60 object-cover rounded-md mb-2"
+                                            />
+                                            <p className="text-lg">{cardDescriptions[index]}</p>
+                                        </div>
+                                    ))}
+                                </div>
+
+                                {/* Horizontal Line */}
+                                <hr className="border-t border-gray-300" />
+
+                                {/* Section Title & Paragraph */}
+                                <div>
+                                    <h1 className="text-2xl font-bold mb-2">行程特色說明</h1>
+                                    <p className="text-gray-700">包車行動｜充實行程｜創建回憶</p>
+                                    <h2 className="font-bold text-red-600">7/1 桃園一日遊 前20名只要1899元！</h2>
+                                </div>
+
+                                {/* Two Side-by-Side Pics */}
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                    <img src={poster1} alt="海報" className="w-64 h-128 object-cover rounded-md mb-2"/>
+                                    <img src={poster2} alt="海報" className="w-64 h-128 object-cover rounded-md mb-2"/>
+                                </div>
+
+                                {/* Horizontal Line */}
+                                <hr className="border-t border-gray-300" />
+
+                                {/* Bottom Paragraph */}
+                                <div className="text-gray-700">
+                                    聯絡資訊...
+                                </div>
                             </div>
-                            <h1>About Us</h1>
-                            <p>nothing here.</p>
                         </div>
                     )}
 
