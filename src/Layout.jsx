@@ -16,17 +16,23 @@ function Layout() {
     const [showModal, setShowModal] = useState(false);
     const cardImages = [fact, migan, farm];
     const cardDescriptions = ['金格觀光工廠', '龍岡米干街', '埔心牧場'];
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     return (
 
         <div>
-            <div className="fixed top-0 left-0 w-screen h-screen pointer-events-none z-0 flex items-center justify-center">
-                <div className="text-[52px] font-bold text-gray-600 opacity-15 text-center rotate-[-45deg] whitespace-pre leading-snug">
-                    This is a demo version{"\n"}Ideatree{"\n"}Made By W. M. Lai
-                </div>
-            </div>
-            <header className="h-16 px-6 bg-[#e5ece5] flex items-center text-xl font-semibold text-[#2f4f4f]">點子樹</header>
+            <header className="h-16 px-6 bg-[#e5ece5] flex items-center text-xl font-semibold text-[#2f4f4f]">
+                <button
+                    onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+                    className="mr-4 text-2xl"
+                    title={isSidebarOpen ? "收合側邊欄" : "展開側邊欄"}
+                >
+                    {isSidebarOpen ? "←" : "→"}
+                </button>
+                點子樹
+            </header>
+
             <div className="flex">
-                <aside className="w-64 flex flex-col bg-gray-100 h-screen text-lg font-medium">
+                <aside className={`${isSidebarOpen ? "w-64" : "w-0 overflow-hidden"} flex flex-col bg-gray-100 h-screen text-lg font-medium transition-all duration-300`}>
                     <div className={`flex items-center py-2 px-4 rounded cursor-pointer transition hover:bg-[#e5ece5] ${activePage === PAGES.HOME ? 'bg-[#d2dcd3] border-l-4 border-[#9daea1] text-[#2f3f33] font-semibold' : 'text-[#3b4a3e]'}`}
                         onClick={() => setActivePage(PAGES.HOME)}>
                         <span>🏠</span>
@@ -39,7 +45,7 @@ function Layout() {
                     </div>
 
                 </aside>
-                <main className="flex-1 p-6 bg-white overflow-y-auto">
+                <main className={`flex-1 p-6 bg-[#fffdf5] overflow-y-auto transition-all duration-300 ${isSidebarOpen ? "ml-0" : "ml-0"}`}>
                     {activePage === PAGES.HOME && (
                         <div>
                             <h1 className="text-2xl font-bold mb-2">🌳歡迎來到 點子樹</h1>
@@ -89,7 +95,7 @@ function Layout() {
 
                                 {/* Bottom Paragraph */}
                                 <div className="text-gray-700">
-                                    ig:<a href="https://www.instagram.com/ty.ideatree" target="_blank" rel="noopener noreferrer">ty.ideatree</a><br/>
+                                    ig:<a href="https://www.instagram.com/ty.ideatree" target="_blank" rel="noopener noreferrer">ty.ideatree</a><br />
                                     email:<a href="mailto:ty.ideatree@gmail.com">ty.ideatree@gmail.com</a>
                                 </div>
                             </div>
